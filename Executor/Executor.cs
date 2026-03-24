@@ -178,7 +178,7 @@
                 int result = QuorumAPI.QuorumAPI.GetAttachState();
                 if (result == 1)
                 {
-                    Execute.ForeColor = Color.Orange;
+                    Execute.ForeColor = Color.LimeGreen;
                 }
                 else
                 {
@@ -190,7 +190,7 @@
             {
                 if (QuorumAPI.QuorumAPI.IsRobloxOpen())
                 {
-                    killRoblox.ForeColor = Color.Orange;
+                    killRoblox.ForeColor = Color.LimeGreen;
                 }
                 else
                 {
@@ -203,7 +203,7 @@
                 int result = AeigisAPI.Module.GetAttachState(); 
                 if (result == 1)
                 {
-                    Execute.ForeColor = Color.Orange;
+                    Execute.ForeColor = Color.LimeGreen;
                 }
                 else
                 {
@@ -214,7 +214,7 @@
             {
                 if (AeigisAPI.Module.IsRobloxOpen())
                 {
-                    killRoblox.ForeColor = Color.Orange;
+                    killRoblox.ForeColor = Color.LimeGreen;
                 }
                 else
                 {
@@ -225,7 +225,7 @@
             {
                 if (QuorumAPI.QuorumAPI.IsRobloxOpen()) 
                 {
-                    killRoblox.ForeColor = Color.Orange;
+                    killRoblox.ForeColor = Color.LimeGreen;
                 }
                 else
                 {
@@ -238,7 +238,7 @@
             {
                 if (SpashAPIXeno.SpashAPIXeno.IsAttached())
                 {
-                    guna2Button1.ForeColor = Color.Orange;
+                    guna2Button1.ForeColor = Color.LimeGreen;
                 }
                 else
                 {

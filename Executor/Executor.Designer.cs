@@ -67,7 +67,7 @@
             this.guna2TabControl1.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.guna2TabControl1.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.guna2TabControl1.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
-            this.guna2TabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.Orange;
+            this.guna2TabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.LimeGreen;
             this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(110, 30);
             this.guna2TabControl1.TabButtonTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2TabControl1.TabButtonTextOffset = new System.Drawing.Point(-5, 0);
@@ -119,7 +119,7 @@
             this.killRoblox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.killRoblox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.killRoblox.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.killRoblox.ForeColor = System.Drawing.Color.Orange;
+            this.killRoblox.ForeColor = System.Drawing.Color.LimeGreen;
             this.killRoblox.Image = ((System.Drawing.Image)(resources.GetObject("killRoblox.Image")));
             this.killRoblox.Location = new System.Drawing.Point(513, 371);
             this.killRoblox.Name = "killRoblox";
@@ -160,7 +160,7 @@
             this.Open.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.Open.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.Open.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.Open.ForeColor = System.Drawing.Color.Orange;
+            this.Open.ForeColor = System.Drawing.Color.LimeGreen;
             this.Open.Image = ((System.Drawing.Image)(resources.GetObject("Open.Image")));
             this.Open.ImageSize = new System.Drawing.Size(25, 25);
             this.Open.Location = new System.Drawing.Point(124, 371);
@@ -184,7 +184,7 @@
             this.inject.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.inject.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.inject.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inject.ForeColor = System.Drawing.Color.Orange;
+            this.inject.ForeColor = System.Drawing.Color.LimeGreen;
             this.inject.Image = ((System.Drawing.Image)(resources.GetObject("inject.Image")));
             this.inject.ImageSize = new System.Drawing.Size(22, 22);
             this.inject.Location = new System.Drawing.Point(615, 371);
@@ -207,7 +207,7 @@
             this.Clear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.Clear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.Clear.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.Clear.ForeColor = System.Drawing.Color.Orange;
+            this.Clear.ForeColor = System.Drawing.Color.LimeGreen;
             this.Clear.Image = ((System.Drawing.Image)(resources.GetObject("Clear.Image")));
             this.Clear.Location = new System.Drawing.Point(199, 371);
             this.Clear.Name = "Clear";
@@ -229,7 +229,7 @@
             this.Execute.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.Execute.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.Execute.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Execute.ForeColor = System.Drawing.Color.Orange;
+            this.Execute.ForeColor = System.Drawing.Color.LimeGreen;
             this.Execute.Image = ((System.Drawing.Image)(resources.GetObject("Execute.Image")));
             this.Execute.Location = new System.Drawing.Point(8, 371);
             this.Execute.Name = "Execute";

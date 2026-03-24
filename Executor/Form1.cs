@@ -85,7 +85,7 @@ namespace executor
                     return;
                 }
 
-                client = new DiscordRpcClient("1336314005932740668"); //Change to your App ID
+                client = new DiscordRpcClient("1363126829833130004"); //Change to your App ID
 
                 client.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
 
@@ -103,8 +103,8 @@ namespace executor
                     Timestamps = Timestamps.Now,
                     Assets = new Assets()
                     {
-                        LargeImageKey = "large_image",
-                        LargeImageText = "Open Source Softworks",
+                        LargeImageKey = "logo",
+                        LargeImageText = "Exter Framework",
                     }
                 });
                 timestamps = Timestamps.Now;
@@ -571,8 +571,8 @@ namespace executor
                 Timestamps = Timestamps.Now,
                 Assets = new Assets()
                 {
-                    LargeImageKey = "large_image",
-                    LargeImageText = "Open Source Softworks",
+                    LargeImageKey = "logo",
+                    LargeImageText = "Exter Framework",
                 }
             });
         }

@@ -51,7 +51,7 @@
             this.loginButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.loginButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.loginButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.loginButton1.FillColor = System.Drawing.Color.Orange;
+            this.loginButton1.FillColor = System.Drawing.Color.LimeGreen;
             this.loginButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.loginButton1.ForeColor = System.Drawing.Color.White;
             this.loginButton1.Location = new System.Drawing.Point(125, 211);
@@ -80,12 +80,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Orange;
+            this.label1.ForeColor = System.Drawing.Color.LimeGreen;
             this.label1.Location = new System.Drawing.Point(201, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 23);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Open Source Softworks";
+            this.label1.Text = "Exter Framework";
             // 
             // login_Logo
             // 
@@ -175,10 +175,10 @@
             // rememberMe
             // 
             this.rememberMe.AutoSize = true;
-            this.rememberMe.CheckedState.BorderColor = System.Drawing.Color.Orange;
+            this.rememberMe.CheckedState.BorderColor = System.Drawing.Color.LimeGreen;
             this.rememberMe.CheckedState.BorderRadius = 1;
             this.rememberMe.CheckedState.BorderThickness = 1;
-            this.rememberMe.CheckedState.FillColor = System.Drawing.Color.Orange;
+            this.rememberMe.CheckedState.FillColor = System.Drawing.Color.LimeGreen;
             this.rememberMe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rememberMe.ForeColor = System.Drawing.Color.White;
             this.rememberMe.Location = new System.Drawing.Point(323, 221);

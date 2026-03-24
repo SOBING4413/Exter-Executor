@@ -85,8 +85,8 @@
             this.TopMost_Switch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TopMost_Switch.Animated = true;
             this.TopMost_Switch.Checked = true;
-            this.TopMost_Switch.CheckedState.BorderColor = System.Drawing.Color.Orange;
-            this.TopMost_Switch.CheckedState.FillColor = System.Drawing.Color.Orange;
+            this.TopMost_Switch.CheckedState.BorderColor = System.Drawing.Color.LimeGreen;
+            this.TopMost_Switch.CheckedState.FillColor = System.Drawing.Color.LimeGreen;
             this.TopMost_Switch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.TopMost_Switch.CheckedState.InnerColor = System.Drawing.Color.White;
             this.TopMost_Switch.Location = new System.Drawing.Point(875, 20);
@@ -105,8 +105,8 @@
             this.Disable_CloseTabMessage_Switch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Disable_CloseTabMessage_Switch.Animated = true;
             this.Disable_CloseTabMessage_Switch.Checked = true;
-            this.Disable_CloseTabMessage_Switch.CheckedState.BorderColor = System.Drawing.Color.Orange;
-            this.Disable_CloseTabMessage_Switch.CheckedState.FillColor = System.Drawing.Color.Orange;
+            this.Disable_CloseTabMessage_Switch.CheckedState.BorderColor = System.Drawing.Color.LimeGreen;
+            this.Disable_CloseTabMessage_Switch.CheckedState.FillColor = System.Drawing.Color.LimeGreen;
             this.Disable_CloseTabMessage_Switch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.Disable_CloseTabMessage_Switch.CheckedState.InnerColor = System.Drawing.Color.White;
             this.Disable_CloseTabMessage_Switch.Location = new System.Drawing.Point(875, 20);
@@ -197,7 +197,7 @@
             // 
             this.APISwitch3.Animated = true;
             this.APISwitch3.CheckedState.BorderThickness = 0;
-            this.APISwitch3.CheckedState.FillColor = System.Drawing.Color.Orange;
+            this.APISwitch3.CheckedState.FillColor = System.Drawing.Color.LimeGreen;
             this.APISwitch3.CheckedState.InnerColor = System.Drawing.Color.White;
             this.APISwitch3.Location = new System.Drawing.Point(849, 23);
             this.APISwitch3.Margin = new System.Windows.Forms.Padding(4);
@@ -215,7 +215,7 @@
             this.APISwitch2.Animated = true;
             this.APISwitch2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.APISwitch2.CheckedState.BorderThickness = 0;
-            this.APISwitch2.CheckedState.FillColor = System.Drawing.Color.Orange;
+            this.APISwitch2.CheckedState.FillColor = System.Drawing.Color.LimeGreen;
             this.APISwitch2.CheckedState.InnerColor = System.Drawing.Color.White;
             this.APISwitch2.Location = new System.Drawing.Point(524, 22);
             this.APISwitch2.Margin = new System.Windows.Forms.Padding(4);
@@ -246,7 +246,7 @@
             this.APISwitch1.Checked = true;
             this.APISwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.APISwitch1.CheckedState.BorderThickness = 0;
-            this.APISwitch1.CheckedState.FillColor = System.Drawing.Color.Orange;
+            this.APISwitch1.CheckedState.FillColor = System.Drawing.Color.LimeGreen;
             this.APISwitch1.CheckedState.InnerColor = System.Drawing.Color.White;
             this.APISwitch1.Location = new System.Drawing.Point(258, 23);
             this.APISwitch1.Margin = new System.Windows.Forms.Padding(4);
@@ -292,8 +292,8 @@
             this.Minimap_Switch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Minimap_Switch.Animated = true;
             this.Minimap_Switch.Checked = true;
-            this.Minimap_Switch.CheckedState.BorderColor = System.Drawing.Color.Orange;
-            this.Minimap_Switch.CheckedState.FillColor = System.Drawing.Color.Orange;
+            this.Minimap_Switch.CheckedState.BorderColor = System.Drawing.Color.LimeGreen;
+            this.Minimap_Switch.CheckedState.FillColor = System.Drawing.Color.LimeGreen;
             this.Minimap_Switch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.Minimap_Switch.CheckedState.InnerColor = System.Drawing.Color.White;
             this.Minimap_Switch.Location = new System.Drawing.Point(875, 22);

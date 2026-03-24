@@ -138,12 +138,12 @@
             this.label1.AutoSize = true;
             this.label1.CausesValidation = false;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Orange;
+            this.label1.ForeColor = System.Drawing.Color.LimeGreen;
             this.label1.Location = new System.Drawing.Point(340, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(175, 21);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Open-Source Executor";
+            this.label1.Text = "Exter Executor";
             // 
             // closeButton
             // 

@@ -120,7 +120,7 @@ namespace executor
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 17);
             this.label9.TabIndex = 5;
-            this.label9.Text = "402 Members";
+            this.label9.Text = "128 Members";
             // 
             // guna2CircleButton2
             // 
@@ -146,7 +146,7 @@ namespace executor
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 17);
             this.label8.TabIndex = 2;
-            this.label8.Text = "129 Online";
+            this.label8.Text = "19 Online";
             // 
             // guna2CircleButton1
             // 
@@ -170,7 +170,7 @@ namespace executor
             this.discordButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.discordButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.discordButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.discordButton.FillColor = System.Drawing.Color.Orange;
+            this.discordButton.FillColor = System.Drawing.Color.LimeGreen;
             this.discordButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discordButton.ForeColor = System.Drawing.Color.White;
             this.discordButton.Image = global::executor.Properties.Resources.discord;
@@ -191,7 +191,7 @@ namespace executor
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(190, 23);
             this.label7.TabIndex = 3;
-            this.label7.Text = "Open Source Softowrks";
+            this.label7.Text = "Exter Framework";
             // 
             // guna2CirclePictureBox1
             // 
@@ -324,7 +324,7 @@ namespace executor
             // 
             this.username.BackColor = System.Drawing.Color.Transparent;
             this.username.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.ForeColor = System.Drawing.Color.Orange;
+            this.username.ForeColor = System.Drawing.Color.LimeGreen;
             this.username.Location = new System.Drawing.Point(145, 50);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(47, 30);
@@ -350,7 +350,7 @@ namespace executor
             this.loginButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.loginButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.loginButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.loginButton.FillColor = System.Drawing.Color.Orange;
+            this.loginButton.FillColor = System.Drawing.Color.LimeGreen;
             this.loginButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.Color.White;
             this.loginButton.Image = global::executor.Properties.Resources.enter;
@@ -420,7 +420,7 @@ namespace executor
             // 
             this.memoryUsage_Label.BackColor = System.Drawing.Color.Transparent;
             this.memoryUsage_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memoryUsage_Label.ForeColor = System.Drawing.Color.Orange;
+            this.memoryUsage_Label.ForeColor = System.Drawing.Color.LimeGreen;
             this.memoryUsage_Label.Location = new System.Drawing.Point(96, 145);
             this.memoryUsage_Label.Name = "memoryUsage_Label";
             this.memoryUsage_Label.Size = new System.Drawing.Size(50, 30);
@@ -464,7 +464,7 @@ namespace executor
             // 
             this.robloxStatus.BackColor = System.Drawing.Color.Transparent;
             this.robloxStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.robloxStatus.ForeColor = System.Drawing.Color.Orange;
+            this.robloxStatus.ForeColor = System.Drawing.Color.LimeGreen;
             this.robloxStatus.Location = new System.Drawing.Point(97, 73);
             this.robloxStatus.Name = "robloxStatus";
             this.robloxStatus.Size = new System.Drawing.Size(76, 30);
@@ -540,7 +540,7 @@ namespace executor
         
         private async void guna2Button1_Click(object sender, EventArgs e)
         {
-            string discordLink = "https://discord.gg/gCWBfGRRNZ"; // Replace with your desired link
+            string discordLink = "https://discord.gg/77WnqnJcPu"; // Replace with your desired link
 
             // Open the link in the default web browser
             try
@@ -580,7 +580,7 @@ namespace executor
 
             if (QuorumAPI.QuorumModule.IsRobloxOpen())
                 {
-                    robloxStatus.ForeColor = Color.Orange;
+                    robloxStatus.ForeColor = Color.LimeGreen;
                     robloxStatus.Text = "Opened";
                 }
                 else

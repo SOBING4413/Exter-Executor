@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Exter Executor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Open Source Softworks")]
+[assembly: AssemblyCompany("Exter Framework")]
 [assembly: AssemblyProduct("Executor")]
-[assembly: AssemblyCopyright("Copyright © Open Source Softworks 2025")]
+[assembly: AssemblyCopyright("Copyright © Exter Framework 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
