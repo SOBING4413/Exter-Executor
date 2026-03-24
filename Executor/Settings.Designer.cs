@@ -55,9 +55,9 @@
             // 
             this.topmost_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.topmost_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.topmost_Panel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.topmost_Panel.BorderRadius = 4;
+            this.topmost_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
+            this.topmost_Panel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
+            this.topmost_Panel.BorderRadius = 12;
             this.topmost_Panel.BorderThickness = 1;
             this.topmost_Panel.Controls.Add(this.label1);
             this.topmost_Panel.Controls.Add(this.TopMost_Switch);
@@ -71,7 +71,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(4, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -85,8 +85,8 @@
             this.TopMost_Switch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TopMost_Switch.Animated = true;
             this.TopMost_Switch.Checked = true;
-            this.TopMost_Switch.CheckedState.BorderColor = System.Drawing.Color.LimeGreen;
-            this.TopMost_Switch.CheckedState.FillColor = System.Drawing.Color.LimeGreen;
+            this.TopMost_Switch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(92)))), ((int)(((byte)(246)))));
+            this.TopMost_Switch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(92)))), ((int)(((byte)(246)))));
             this.TopMost_Switch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.TopMost_Switch.CheckedState.InnerColor = System.Drawing.Color.White;
             this.TopMost_Switch.Location = new System.Drawing.Point(875, 20);
@@ -105,8 +105,8 @@
             this.Disable_CloseTabMessage_Switch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Disable_CloseTabMessage_Switch.Animated = true;
             this.Disable_CloseTabMessage_Switch.Checked = true;
-            this.Disable_CloseTabMessage_Switch.CheckedState.BorderColor = System.Drawing.Color.LimeGreen;
-            this.Disable_CloseTabMessage_Switch.CheckedState.FillColor = System.Drawing.Color.LimeGreen;
+            this.Disable_CloseTabMessage_Switch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(92)))), ((int)(((byte)(246)))));
+            this.Disable_CloseTabMessage_Switch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(92)))), ((int)(((byte)(246)))));
             this.Disable_CloseTabMessage_Switch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.Disable_CloseTabMessage_Switch.CheckedState.InnerColor = System.Drawing.Color.White;
             this.Disable_CloseTabMessage_Switch.Location = new System.Drawing.Point(875, 20);
@@ -124,9 +124,9 @@
             // 
             this.closetab_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.closetab_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.closetab_Panel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.closetab_Panel.BorderRadius = 4;
+            this.closetab_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
+            this.closetab_Panel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
+            this.closetab_Panel.BorderRadius = 12;
             this.closetab_Panel.BorderThickness = 1;
             this.closetab_Panel.Controls.Add(this.label2);
             this.closetab_Panel.Controls.Add(this.Disable_CloseTabMessage_Switch);
@@ -139,7 +139,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(4, 16);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -152,9 +152,9 @@
             // 
             this.api_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.api_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.api_Panel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.api_Panel.BorderRadius = 4;
+            this.api_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
+            this.api_Panel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
+            this.api_Panel.BorderRadius = 12;
             this.api_Panel.BorderThickness = 1;
             this.api_Panel.Controls.Add(this.label6);
             this.api_Panel.Controls.Add(this.label5);
@@ -172,7 +172,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(722, 15);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -184,7 +184,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(396, 15);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -231,7 +231,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(105, 16);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -246,7 +246,7 @@
             this.APISwitch1.Checked = true;
             this.APISwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.APISwitch1.CheckedState.BorderThickness = 0;
-            this.APISwitch1.CheckedState.FillColor = System.Drawing.Color.LimeGreen;
+            this.APISwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(92)))), ((int)(((byte)(246)))));
             this.APISwitch1.CheckedState.InnerColor = System.Drawing.Color.White;
             this.APISwitch1.Location = new System.Drawing.Point(258, 23);
             this.APISwitch1.Margin = new System.Windows.Forms.Padding(4);
@@ -262,7 +262,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(4, 16);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -275,9 +275,9 @@
             // 
             this.toggleminimap_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.toggleminimap_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.toggleminimap_Panel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.toggleminimap_Panel.BorderRadius = 4;
+            this.toggleminimap_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
+            this.toggleminimap_Panel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
+            this.toggleminimap_Panel.BorderRadius = 12;
             this.toggleminimap_Panel.BorderThickness = 1;
             this.toggleminimap_Panel.Controls.Add(this.Minimap_Switch);
             this.toggleminimap_Panel.Controls.Add(this.label10);
@@ -292,8 +292,8 @@
             this.Minimap_Switch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Minimap_Switch.Animated = true;
             this.Minimap_Switch.Checked = true;
-            this.Minimap_Switch.CheckedState.BorderColor = System.Drawing.Color.LimeGreen;
-            this.Minimap_Switch.CheckedState.FillColor = System.Drawing.Color.LimeGreen;
+            this.Minimap_Switch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(92)))), ((int)(((byte)(246)))));
+            this.Minimap_Switch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(92)))), ((int)(((byte)(246)))));
             this.Minimap_Switch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.Minimap_Switch.CheckedState.InnerColor = System.Drawing.Color.White;
             this.Minimap_Switch.Location = new System.Drawing.Point(875, 22);
@@ -310,7 +310,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(4, 16);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -324,7 +324,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(964, 500);
             this.Controls.Add(this.toggleminimap_Panel);
             this.Controls.Add(this.api_Panel);

@@ -35,7 +35,7 @@
             // 
             // scriptPanel1
             // 
-            this.scriptPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.scriptPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(18)))));
             this.scriptPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.scriptPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.scriptPanel1.Location = new System.Drawing.Point(0, 0);
@@ -57,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(964, 500);
             this.Controls.Add(this.scriptPanel1);
             this.DoubleBuffered = true;

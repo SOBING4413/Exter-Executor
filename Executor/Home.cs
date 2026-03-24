@@ -507,7 +507,7 @@ namespace executor
             // 
             // Home
             // 
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(755, 435);
             this.Controls.Add(this.status_Panel);
             this.Controls.Add(this.welcome_Panel);
