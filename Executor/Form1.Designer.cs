@@ -39,8 +39,8 @@
             this.closeButton = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.OpenDirectory = new Guna.UI2.WinForms.Guna2Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.searchBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.InnerFormBackground = new Guna.UI2.WinForms.Guna2Panel();
@@ -141,7 +141,7 @@
             this.label1.ForeColor = System.Drawing.Color.LimeGreen;
             this.label1.Location = new System.Drawing.Point(340, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 21);
+            this.label1.Size = new System.Drawing.Size(115, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Exter Executor";
             // 
@@ -200,6 +200,27 @@
             this.guna2Panel2.TabIndex = 0;
             this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
+            // OpenDirectory
+            // 
+            this.OpenDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OpenDirectory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.OpenDirectory.BorderRadius = 1;
+            this.OpenDirectory.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.OpenDirectory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.OpenDirectory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.OpenDirectory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.OpenDirectory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.OpenDirectory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.OpenDirectory.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.OpenDirectory.ForeColor = System.Drawing.Color.White;
+            this.OpenDirectory.Image = global::executor.Properties.Resources.plus;
+            this.OpenDirectory.ImageSize = new System.Drawing.Size(22, 22);
+            this.OpenDirectory.Location = new System.Drawing.Point(105, 9);
+            this.OpenDirectory.Name = "OpenDirectory";
+            this.OpenDirectory.Size = new System.Drawing.Size(27, 30);
+            this.OpenDirectory.TabIndex = 9;
+            this.OpenDirectory.Click += new System.EventHandler(this.OpenDirectory_Click);
+            // 
             // listBox1
             // 
             this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -225,27 +246,6 @@
             this.listBox1.TabIndex = 20;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // OpenDirectory
-            // 
-            this.OpenDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OpenDirectory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.OpenDirectory.BorderRadius = 1;
-            this.OpenDirectory.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.OpenDirectory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.OpenDirectory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.OpenDirectory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.OpenDirectory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.OpenDirectory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.OpenDirectory.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.OpenDirectory.ForeColor = System.Drawing.Color.White;
-            this.OpenDirectory.Image = global::executor.Properties.Resources.plus;
-            this.OpenDirectory.ImageSize = new System.Drawing.Size(22, 22);
-            this.OpenDirectory.Location = new System.Drawing.Point(105, 9);
-            this.OpenDirectory.Name = "OpenDirectory";
-            this.OpenDirectory.Size = new System.Drawing.Size(27, 30);
-            this.OpenDirectory.TabIndex = 9;
-            this.OpenDirectory.Click += new System.EventHandler(this.OpenDirectory_Click);
-            // 
             // searchBox
             // 
             this.searchBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
@@ -266,7 +266,6 @@
             this.searchBox.Location = new System.Drawing.Point(744, 42);
             this.searchBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.searchBox.Name = "searchBox";
-            this.searchBox.PasswordChar = '\0';
             this.searchBox.PlaceholderText = "Search...";
             this.searchBox.SelectedText = "";
             this.searchBox.Size = new System.Drawing.Size(124, 31);

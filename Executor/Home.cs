@@ -9,7 +9,7 @@ namespace executor
     public partial class Home : Form
     {
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Panel changelogs_Panel;
+        private Guna.UI2.WinForms.Guna2Panel Credits_Panel;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Label label1;
         private Label label6;
@@ -61,7 +61,7 @@ namespace executor
             this.discordButton = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.changelogs_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.Credits_Panel = new Guna.UI2.WinForms.Guna2Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -88,7 +88,7 @@ namespace executor
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            this.changelogs_Panel.SuspendLayout();
+            this.Credits_Panel.SuspendLayout();
             this.welcome_Panel.SuspendLayout();
             this.status_Panel.SuspendLayout();
             this.SuspendLayout();
@@ -118,7 +118,7 @@ namespace executor
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(168, 34);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 17);
+            this.label9.Size = new System.Drawing.Size(75, 13);
             this.label9.TabIndex = 5;
             this.label9.Text = "128 Members";
             // 
@@ -144,7 +144,7 @@ namespace executor
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(76, 34);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 17);
+            this.label8.Size = new System.Drawing.Size(57, 13);
             this.label8.TabIndex = 2;
             this.label8.Text = "19 Online";
             // 
@@ -189,7 +189,7 @@ namespace executor
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(56, 15);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(190, 23);
+            this.label7.Size = new System.Drawing.Size(113, 19);
             this.label7.TabIndex = 3;
             this.label7.Text = "Exter Framework";
             // 
@@ -207,35 +207,35 @@ namespace executor
             this.guna2CirclePictureBox1.TabIndex = 3;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // changelogs_Panel
+            // Credits_Panel
             // 
-            this.changelogs_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
-            this.changelogs_Panel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.changelogs_Panel.BorderRadius = 4;
-            this.changelogs_Panel.BorderThickness = 1;
-            this.changelogs_Panel.Controls.Add(this.label6);
-            this.changelogs_Panel.Controls.Add(this.label5);
-            this.changelogs_Panel.Controls.Add(this.label4);
-            this.changelogs_Panel.Controls.Add(this.label3);
-            this.changelogs_Panel.Controls.Add(this.label2);
-            this.changelogs_Panel.Controls.Add(this.label1);
-            this.changelogs_Panel.Controls.Add(this.guna2Separator1);
-            this.changelogs_Panel.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.changelogs_Panel.Location = new System.Drawing.Point(12, 180);
-            this.changelogs_Panel.Name = "changelogs_Panel";
-            this.changelogs_Panel.Size = new System.Drawing.Size(366, 213);
-            this.changelogs_Panel.TabIndex = 1;
+            this.Credits_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
+            this.Credits_Panel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.Credits_Panel.BorderRadius = 4;
+            this.Credits_Panel.BorderThickness = 1;
+            this.Credits_Panel.Controls.Add(this.label6);
+            this.Credits_Panel.Controls.Add(this.label5);
+            this.Credits_Panel.Controls.Add(this.label4);
+            this.Credits_Panel.Controls.Add(this.label3);
+            this.Credits_Panel.Controls.Add(this.label2);
+            this.Credits_Panel.Controls.Add(this.label1);
+            this.Credits_Panel.Controls.Add(this.guna2Separator1);
+            this.Credits_Panel.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Credits_Panel.Location = new System.Drawing.Point(12, 180);
+            this.Credits_Panel.Name = "Credits_Panel";
+            this.Credits_Panel.Size = new System.Drawing.Size(366, 213);
+            this.Credits_Panel.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(132, 174);
+            this.label6.Location = new System.Drawing.Point(156, 175);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 28);
+            this.label6.Size = new System.Drawing.Size(27, 21);
             this.label6.TabIndex = 6;
-            this.label6.Text = "[+] v1.2.0";
+            this.label6.Text = "v1";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
@@ -245,9 +245,8 @@ namespace executor
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label5.Location = new System.Drawing.Point(3, 151);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 28);
+            this.label5.Size = new System.Drawing.Size(0, 21);
             this.label5.TabIndex = 5;
-            this.label5.Text = "[+] Multi API";
             // 
             // label4
             // 
@@ -256,9 +255,8 @@ namespace executor
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.Location = new System.Drawing.Point(3, 120);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(219, 28);
+            this.label4.Size = new System.Drawing.Size(0, 21);
             this.label4.TabIndex = 4;
-            this.label4.Text = "[+] 90% UNC and sUNC";
             // 
             // label3
             // 
@@ -267,31 +265,30 @@ namespace executor
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.Location = new System.Drawing.Point(3, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 28);
+            this.label3.Size = new System.Drawing.Size(0, 21);
             this.label3.TabIndex = 3;
-            this.label3.Text = "[+] Tab Saving";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label2.Location = new System.Drawing.Point(3, 67);
+            this.label2.Location = new System.Drawing.Point(16, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 28);
+            this.label2.Size = new System.Drawing.Size(95, 21);
             this.label2.TabIndex = 2;
-            this.label2.Text = "[+] Clean UI";
+            this.label2.Text = "Sobing4413";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(87, 13);
+            this.label1.Location = new System.Drawing.Point(15, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 38);
+            this.label1.Size = new System.Drawing.Size(83, 30);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Changelogs";
+            this.label1.Text = "Credits";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // guna2Separator1
@@ -327,7 +324,7 @@ namespace executor
             this.username.ForeColor = System.Drawing.Color.LimeGreen;
             this.username.Location = new System.Drawing.Point(145, 50);
             this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(47, 30);
+            this.username.Size = new System.Drawing.Size(38, 23);
             this.username.TabIndex = 8;
             this.username.Text = "user.";
             this.username.Click += new System.EventHandler(this.guna2HtmlLabel3_Click);
@@ -339,7 +336,7 @@ namespace executor
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label10.Location = new System.Drawing.Point(10, 95);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(148, 28);
+            this.label10.Size = new System.Drawing.Size(118, 21);
             this.label10.TabIndex = 7;
             this.label10.Text = "Status: Member";
             // 
@@ -368,7 +365,7 @@ namespace executor
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(94, 50);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(56, 30);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(46, 23);
             this.guna2HtmlLabel2.TabIndex = 2;
             this.guna2HtmlLabel2.Text = "Hello,";
             // 
@@ -379,7 +376,7 @@ namespace executor
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(94, 16);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(262, 30);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(208, 23);
             this.guna2HtmlLabel1.TabIndex = 1;
             this.guna2HtmlLabel1.Text = "Welcome To Exter Executor,";
             // 
@@ -421,9 +418,9 @@ namespace executor
             this.memoryUsage_Label.BackColor = System.Drawing.Color.Transparent;
             this.memoryUsage_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memoryUsage_Label.ForeColor = System.Drawing.Color.LimeGreen;
-            this.memoryUsage_Label.Location = new System.Drawing.Point(96, 145);
+            this.memoryUsage_Label.Location = new System.Drawing.Point(97, 145);
             this.memoryUsage_Label.Name = "memoryUsage_Label";
-            this.memoryUsage_Label.Size = new System.Drawing.Size(50, 30);
+            this.memoryUsage_Label.Size = new System.Drawing.Size(41, 23);
             this.memoryUsage_Label.TabIndex = 13;
             this.memoryUsage_Label.Text = "0 MB";
             // 
@@ -434,7 +431,7 @@ namespace executor
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(10, 145);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(64, 30);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(52, 23);
             this.guna2HtmlLabel3.TabIndex = 12;
             this.guna2HtmlLabel3.Text = "Usage:";
             // 
@@ -445,7 +442,7 @@ namespace executor
             this.injectedStatus.ForeColor = System.Drawing.Color.Gray;
             this.injectedStatus.Location = new System.Drawing.Point(97, 109);
             this.injectedStatus.Name = "injectedStatus";
-            this.injectedStatus.Size = new System.Drawing.Size(116, 30);
+            this.injectedStatus.Size = new System.Drawing.Size(95, 23);
             this.injectedStatus.TabIndex = 11;
             this.injectedStatus.Text = "Not Injected";
             // 
@@ -456,7 +453,7 @@ namespace executor
             this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(10, 109);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(81, 30);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(67, 23);
             this.guna2HtmlLabel6.TabIndex = 10;
             this.guna2HtmlLabel6.Text = "Injected:";
             // 
@@ -467,7 +464,7 @@ namespace executor
             this.robloxStatus.ForeColor = System.Drawing.Color.LimeGreen;
             this.robloxStatus.Location = new System.Drawing.Point(97, 73);
             this.robloxStatus.Name = "robloxStatus";
-            this.robloxStatus.Size = new System.Drawing.Size(76, 30);
+            this.robloxStatus.Size = new System.Drawing.Size(62, 23);
             this.robloxStatus.TabIndex = 9;
             this.robloxStatus.Text = "Opened";
             // 
@@ -478,7 +475,7 @@ namespace executor
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(10, 73);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(71, 30);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(59, 23);
             this.guna2HtmlLabel4.TabIndex = 9;
             this.guna2HtmlLabel4.Text = "Roblox:";
             // 
@@ -498,15 +495,15 @@ namespace executor
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(90, 8);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 38);
+            this.label11.Size = new System.Drawing.Size(73, 30);
             this.label11.TabIndex = 7;
             this.label11.Text = "Status";
             // 
             // timer2
             // 
             this.timer2.Enabled = true;
+            this.timer2.Interval = 1500;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick_1);
-            timer2.Interval = 1500;
             // 
             // Home
             // 
@@ -514,7 +511,7 @@ namespace executor
             this.ClientSize = new System.Drawing.Size(755, 435);
             this.Controls.Add(this.status_Panel);
             this.Controls.Add(this.welcome_Panel);
-            this.Controls.Add(this.changelogs_Panel);
+            this.Controls.Add(this.Credits_Panel);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Home";
@@ -522,8 +519,8 @@ namespace executor
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            this.changelogs_Panel.ResumeLayout(false);
-            this.changelogs_Panel.PerformLayout();
+            this.Credits_Panel.ResumeLayout(false);
+            this.Credits_Panel.PerformLayout();
             this.welcome_Panel.ResumeLayout(false);
             this.welcome_Panel.PerformLayout();
             this.status_Panel.ResumeLayout(false);

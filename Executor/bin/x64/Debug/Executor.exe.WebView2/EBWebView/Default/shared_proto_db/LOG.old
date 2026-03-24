@@ -1,4 +1,4 @@
-2026/03/24-22:36:08.310 cae4 Reusing MANIFEST C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Debug\Executor.exe.WebView2\EBWebView\Default\shared_proto_db/MANIFEST-000001
-2026/03/24-22:36:08.312 cae4 Recovering log #3
-2026/03/24-22:36:08.313 cae4 (ignoring error) C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Debug\Executor.exe.WebView2\EBWebView\Default\shared_proto_db/000003.log: dropping 6 bytes; Corruption: missing start of fragmented record(2)
-2026/03/24-22:36:08.314 cae4 Reusing old log C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Debug\Executor.exe.WebView2\EBWebView\Default\shared_proto_db/000003.log 
+2026/03/24-22:53:40.161 d8b0 Reusing MANIFEST C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Debug\Executor.exe.WebView2\EBWebView\Default\shared_proto_db/MANIFEST-000001
+2026/03/24-22:53:40.162 d8b0 Recovering log #3
+2026/03/24-22:53:40.162 d8b0 (ignoring error) C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Debug\Executor.exe.WebView2\EBWebView\Default\shared_proto_db/000003.log: dropping 6 bytes; Corruption: missing start of fragmented record(2)
+2026/03/24-22:53:40.162 d8b0 Reusing old log C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Debug\Executor.exe.WebView2\EBWebView\Default\shared_proto_db/000003.log 
