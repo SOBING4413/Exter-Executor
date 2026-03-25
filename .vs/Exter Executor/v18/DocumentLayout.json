@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{099F8884-07B8-43D2-B900-EE6A8CF3866F}|Executor\\Exter Executor.csproj|C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\executor\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{099F8884-07B8-43D2-B900-EE6A8CF3866F}|Executor\\Exter Executor.csproj|solutionrelative:executor\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{099F8884-07B8-43D2-B900-EE6A8CF3866F}|Executor\\Exter Executor.csproj|c:\\users\\hikam\\downloads\\exter executor\\exter executor\\exter executor\\executor\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{099F8884-07B8-43D2-B900-EE6A8CF3866F}|Executor\\Exter Executor.csproj|solutionrelative:executor\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -37,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{099F8884-07B8-43D2-B900-EE6A8CF3866F}|Executor\\Exter Executor.csproj|C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\executor\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{099F8884-07B8-43D2-B900-EE6A8CF3866F}|Executor\\Exter Executor.csproj|solutionrelative:executor\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{099F8884-07B8-43D2-B900-EE6A8CF3866F}|Executor\\Exter Executor.csproj|C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\executor\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{099F8884-07B8-43D2-B900-EE6A8CF3866F}|Executor\\Exter Executor.csproj|solutionrelative:executor\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{099F8884-07B8-43D2-B900-EE6A8CF3866F}|Executor\\Exter Executor.csproj|C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\executor\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -106,7 +106,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 334,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -122,32 +122,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "Home.cs",
               "DocumentMoniker": "C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\Executor\\Home.cs",
               "RelativeDocumentMoniker": "Executor\\Home.cs",
               "ToolTip": "C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\Executor\\Home.cs",
               "RelativeToolTip": "Executor\\Home.cs",
-              "ViewState": "AgIAAAQCAAAAAAAAAAAhwBgCAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAPcBAAAAAAAAAAAmwBQCAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-10T20:51:56.313Z"
+              "WhenOpened": "2026-01-10T20:51:56.313Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\Executor\\Form1.cs",
               "RelativeDocumentMoniker": "Executor\\Form1.cs",
               "ToolTip": "C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\Executor\\Form1.cs",
               "RelativeToolTip": "Executor\\Form1.cs",
-              "ViewState": "AgIAAE8BAAAAAAAAAAAawF8BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAE8BAAAAAAAAAAAawFkBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-10T20:51:56.657Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\Executor\\Form1.cs",
               "RelativeDocumentMoniker": "Executor\\Form1.cs",
@@ -158,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Login.cs",
               "DocumentMoniker": "C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\Executor\\Login.cs",
               "RelativeDocumentMoniker": "Executor\\Login.cs",
@@ -170,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Executor.cs",
               "DocumentMoniker": "C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\Executor\\Executor.cs",
               "RelativeDocumentMoniker": "Executor\\Executor.cs",
@@ -182,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Executor.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\Executor\\Executor.cs",
               "RelativeDocumentMoniker": "Executor\\Executor.cs",
@@ -193,18 +194,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Home.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\Executor\\Home.cs",
               "RelativeDocumentMoniker": "Executor\\Home.cs",
               "ToolTip": "C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\Executor\\Home.cs [Design]",
               "RelativeToolTip": "Executor\\Home.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-10T20:51:57.329Z"
+              "WhenOpened": "2026-01-10T20:51:57.329Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Settings.cs",
               "DocumentMoniker": "C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\Executor\\Settings.cs",
               "RelativeDocumentMoniker": "Executor\\Settings.cs",
@@ -216,7 +218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Login.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\Executor\\Login.cs",
               "RelativeDocumentMoniker": "Executor\\Login.cs",
@@ -227,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Login.Designer.cs",
               "DocumentMoniker": "C:\\Users\\hikam\\Downloads\\Exter Executor\\Exter Executor\\Exter Executor\\Executor\\Login.Designer.cs",
               "RelativeDocumentMoniker": "Executor\\Login.Designer.cs",

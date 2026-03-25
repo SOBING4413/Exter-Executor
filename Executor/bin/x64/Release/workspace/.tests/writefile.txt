@@ -1,1 +1,1 @@
-success
+UNC_WRITEFILE_TEST
