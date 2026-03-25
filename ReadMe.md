@@ -11,7 +11,7 @@
 
 <br/>
 
-**Exter Executor** is a sleek and powerful Windows desktop application built with C# WinForms, designed for executing Roblox scripts with an intuitive, modern interface. Featuring an integrated Monaco code editor, a built-in Script Hub, multi-API support, and a secure key-based authentication system.
+**Exter Executor** is a sleek and powerful Windows desktop application built with C# WinForms, designed for executing Roblox scripts with an intuitive, modern interface. Featuring an integrated Monaco code editor, a built-in Exter Executor, multi-API support, and a secure key-based authentication system.
 
 <br/>
 
@@ -29,7 +29,7 @@
 - [📂 Project Structure](#-project-structure)
 - [⚙️ Configuration](#️-configuration)
 - [🔑 Authentication](#-authentication)
-- [📜 Script Hub](#-script-hub)
+- [📜 Exter Executor](#-script-hub)
 - [🎛️ Settings](#️-settings)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
@@ -43,7 +43,7 @@
 |---------|-------------|
 | 🔐 **Secure Login** | Key-based authentication system powered by KeyAuth API with license validation |
 | 📝 **Monaco Editor** | Full-featured code editor with Lua syntax highlighting, IntelliSense, and multi-tab support |
-| 📚 **Script Hub** | Browse and load pre-made scripts directly from a curated GitHub repository |
+| 📚 **Exter Executor** | Browse and load pre-made scripts directly from a curated GitHub repository |
 | 🔄 **Multi-API Support** | Choose between **QuorumAPI**, **AeigisAPI**, and **SpashAPI** for script execution |
 | 📌 **Always on Top** | Pin the executor window above all other applications |
 | 🗺️ **Minimap Toggle** | Enable/disable the code minimap in the Monaco editor |
@@ -140,8 +140,8 @@ Exter-Executor/
 │   ├── Executor.cs              # Script executor (Monaco editor + tabs)
 │   ├── Executor.Designer.cs     # Executor form designer
 │   ├── Home.cs                  # Home page (news & changelog)
-│   ├── ScriptHub.cs             # Script Hub browser
-│   ├── ScriptHub.Designer.cs    # Script Hub designer
+│   ├── ScriptHub.cs             # Exter Executor browser
+│   ├── ScriptHub.Designer.cs    # Exter Executor designer
 │   ├── Settings.cs              # Settings panel
 │   ├── Settings.Designer.cs     # Settings panel designer
 │   ├── Program.cs               # Application entry point
@@ -205,9 +205,9 @@ The login system supports:
 
 ---
 
-## 📜 Script Hub
+## 📜 Exter Executor
 
-The **Script Hub** provides a curated collection of pre-made scripts:
+The **Exter Executor** provides a curated collection of pre-made scripts:
 
 - Scripts are fetched from a remote GitHub repository
 - Each script displays its **name** and **game compatibility**
