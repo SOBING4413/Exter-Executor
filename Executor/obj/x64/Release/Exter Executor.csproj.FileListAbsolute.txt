@@ -1,0 +1,33 @@
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\libcrypto-3-x64.dll
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\libssl-3-x64.dll
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\Monaco\index.html
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\Executor.exe.config
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\Executor.exe
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\Executor.pdb
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\DiscordRPC.dll
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\Guna.UI2.dll
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\Microsoft.Web.WebView2.Core.dll
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\Newtonsoft.Json.dll
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\Syphra.dll
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\DiscordRPC.pdb
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\DiscordRPC.xml
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\Microsoft.Web.WebView2.Core.xml
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\Microsoft.Web.WebView2.WinForms.xml
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\Microsoft.Web.WebView2.Wpf.xml
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Release\Newtonsoft.Json.xml
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\obj\x64\Release\Exter Executor.csproj.AssemblyReference.cache
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\obj\x64\Release\executor.Executor.resources
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\obj\x64\Release\executor.MainUI.resources
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\obj\x64\Release\executor.Login.resources
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\obj\x64\Release\executor.Home.resources
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\obj\x64\Release\executor.Properties.Resources.resources
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\obj\x64\Release\executor.ScriptHub.resources
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\obj\x64\Release\executor.Settings.resources
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\obj\x64\Release\Exter Executor.csproj.GenerateResource.cache
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\obj\x64\Release\Exter Executor.csproj.CoreCompileInputs.cache
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\obj\x64\Release\Exter Ex.E4C0DFC7.Up2Date
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\obj\x64\Release\Executor.exe
+C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\obj\x64\Release\Executor.pdb

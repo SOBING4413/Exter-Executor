@@ -1,0 +1,4 @@
+2026/03/25-11:48:29.887 ae40 Reusing MANIFEST C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Debug\Executor.exe.WebView2\EBWebView\Default\shared_proto_db/MANIFEST-000001
+2026/03/25-11:48:29.888 ae40 Recovering log #3
+2026/03/25-11:48:29.888 ae40 (ignoring error) C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Debug\Executor.exe.WebView2\EBWebView\Default\shared_proto_db/000003.log: dropping 6 bytes; Corruption: missing start of fragmented record(2)
+2026/03/25-11:48:29.889 ae40 Reusing old log C:\Users\hikam\Downloads\Exter Executor\Exter Executor\Exter Executor\Executor\bin\x64\Debug\Executor.exe.WebView2\EBWebView\Default\shared_proto_db/000003.log 
