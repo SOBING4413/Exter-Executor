@@ -270,7 +270,7 @@ namespace executor
 
         private void LoadScriptHubForm()
         {
-            tabLabel.Text = ("Script Hub");
+            tabLabel.Text = ("Exter Executor");
             scripthubButton.Image = executor.Properties.Resources.script;
             editorButton.Image = executor.Properties.Resources.EDITOR2;
             homeButton.Image = executor.Properties.Resources.home2;
