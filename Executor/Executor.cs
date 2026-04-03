@@ -3,6 +3,7 @@
     using System.Drawing;
     using System.IO;
     using System.Linq;
+    using System.Reflection;
     using System.Runtime.InteropServices;
     using System.Threading.Tasks;
     using System.Timers;
@@ -17,6 +18,10 @@
         {
             private AppSettings _settings;
             private QuorumModule quorum;
+            private readonly bool ownsQuorum;
+            private bool _isInjecting;
+            private bool _isExecuting;
+            private bool _resourcesCleaned;
 
             private int destroyedTabs = 0;
             private int totalTabCount = 6; // Max tabs you ever want
@@ -36,7 +41,7 @@
             public System.Windows.Forms.Timer time = new System.Windows.Forms.Timer();
             public System.Timers.Timer savetimer = new System.Timers.Timer(5000);
 
-            public Executor(AppSettings settings)
+            public Executor(AppSettings settings, QuorumModule sharedQuorum = null)
             {
                 
                 // Update Execution Buton
@@ -47,10 +52,20 @@
                 savetimer.Elapsed += TimerElapsed;
                 savetimer.Start();
                 InitializeComponent();
-            QuorumAPI.QuorumModule._AutoUpdateLogs = true;
-            quorum = new QuorumModule();
-            quorum.StartCommunication(); // Starting communication. Very Important!!
-            guna2TabControl1.Visible = false;
+                ApplyV2Theme();
+                QuorumAPI.QuorumModule._AutoUpdateLogs = true;
+                if (sharedQuorum != null)
+                {
+                    quorum = sharedQuorum;
+                    ownsQuorum = false;
+                }
+                else
+                {
+                    quorum = new QuorumModule();
+                    quorum.StartCommunication(); // Starting communication. Very Important!!
+                    ownsQuorum = true;
+                }
+                guna2TabControl1.Visible = false;
 
                 // Defines settings object
                 _settings = settings;
@@ -127,6 +142,24 @@
                         }
                     };
                 }
+            }
+            private void ApplyV2Theme()
+            {
+                BackColor = Color.FromArgb(14, 16, 25);
+                TabControlPanel.FillColor = Color.FromArgb(14, 16, 25);
+                Execute.FillColor = Color.FromArgb(108, 92, 231);
+                Execute.HoverState.FillColor = Color.FromArgb(132, 117, 255);
+                Execute.BorderColor = Color.FromArgb(132, 117, 255);
+                inject.BorderColor = Color.FromArgb(55, 66, 250);
+                inject.ForeColor = Color.FromArgb(113, 126, 255);
+                inject.HoverState.FillColor = Color.FromArgb(55, 66, 250);
+                inject.HoverState.ForeColor = Color.White;
+                Open.FillColor = Color.FromArgb(20, 23, 34);
+                Clear.FillColor = Color.FromArgb(20, 23, 34);
+                killRoblox.FillColor = Color.FromArgb(20, 23, 34);
+                Open.BorderColor = Color.FromArgb(49, 54, 73);
+                Clear.BorderColor = Color.FromArgb(49, 54, 73);
+                killRoblox.BorderColor = Color.FromArgb(49, 54, 73);
             }
 
 
@@ -246,22 +279,36 @@
                 }
             }*/
         }
-            private async void Inject_Click(object sender, EventArgs e) //Inject Button
+        private async void Inject_Click(object sender, EventArgs e) //Inject Button
             {   
+                if (_isInjecting) return;
+                _isInjecting = true;
+                inject.Enabled = false;
                 if (ChosenAPI == "QuorumAPI")
                 {
-                await quorum.AttachAPI();
-            }
+                    try
+                    {
+                        await quorum.AttachAPI();
+                    }
+                    finally
+                    {
+                        _isInjecting = false;
+                        inject.Enabled = true;
+                    }
+                    return;
+                }
 
                 if (ChosenAPI == "AeigisAPI")
                 {
                     MessageBox.Show("AeigisAPI does not work, use quorum API!");
-            }
+                }
                 if (ChosenAPI == "SpashAPI")
                 {
                     MessageBox.Show("SpashAPI does not work, use quorum API!");
+                }
+                _isInjecting = false;
+                inject.Enabled = true;
             }
-        }
 
 
             private async void Clear_Click(object sender, EventArgs e)
@@ -290,27 +337,48 @@
 
             private async void Execute_ClickAsync(object sender, EventArgs e) //Execute Button
             {
+                if (_isExecuting) return;
+                _isExecuting = true;
+                Execute.Enabled = false;
                 Microsoft.Web.WebView2.WinForms.WebView2 webView = (Microsoft.Web.WebView2.WinForms.WebView2)guna2TabControl1.SelectedTab.Controls[0];
+                await webView.EnsureCoreWebView2Async();
                 var result = await webView.CoreWebView2.ExecuteScriptAsync("GetText();");
                 var text = JsonConvert.DeserializeObject<string>(result);
             
                 if (ChosenAPI == "QuorumAPI")
                 {
-                
-                var injectResult = quorum.Execute(text);
-                MessageBox.Show("Execute result: " + injectResult.ToString());
-            }
+                    try
+                    {
+                        if (QuorumAPI.QuorumAPI.GetAttachState() != 1)
+                        {
+                            await quorum.AttachAPI();
+                        }
+                        quorum.Execute(text);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Execution failed: {ex.Message}");
+                    }
+                    finally
+                    {
+                        _isExecuting = false;
+                        Execute.Enabled = true;
+                    }
+                    return;
+                }
             
                 if (ChosenAPI == "AeigisAPI")
                 {
-                        MessageBox.Show("AeigisAPI does not work, use quorum API!");
-            }
+                    MessageBox.Show("AeigisAPI does not work, use quorum API!");
+                }
 
-            if (ChosenAPI == "SpashAPI")
-            {
-                MessageBox.Show("SpashAPI does not work, use quorum API!");
+                if (ChosenAPI == "SpashAPI")
+                {
+                    MessageBox.Show("SpashAPI does not work, use quorum API!");
+                }
+                _isExecuting = false;
+                Execute.Enabled = true;
             }
-        }
 
             public void LoadTabs() // Load Save file data into tabs
             {
@@ -521,7 +589,10 @@
 
             private void TimerElapsed(object sender, ElapsedEventArgs e) // Every 5 seconds, save tabs
             {
-                this.Invoke(new Action(() => SaveTabs()));
+                if (!IsDisposed && IsHandleCreated)
+                {
+                    this.Invoke(new Action(() => SaveTabs()));
+                }
             }
 
             private void KillRoblox_Click(object sender, EventArgs e) // Kill Roblox Button
@@ -539,6 +610,68 @@
                 QuorumAPI.QuorumModule.KillRoblox();
             }
 
+            }
+
+            protected override void OnFormClosing(FormClosingEventArgs e)
+            {
+                base.OnFormClosing(e);
+                CleanupExecutorResources();
+            }
+
+            protected override void Dispose(bool disposing)
+            {
+                if (disposing)
+                {
+                    CleanupExecutorResources();
+                }
+                base.Dispose(disposing);
+            }
+
+            private void CleanupExecutorResources()
+            {
+                if (_resourcesCleaned) return;
+                _resourcesCleaned = true;
+
+                try
+                {
+                    SaveTabs();
+                }
+                catch { }
+
+                time?.Stop();
+                time?.Dispose();
+                savetimer?.Stop();
+                savetimer?.Dispose();
+
+                foreach (TabPage tab in guna2TabControl1.TabPages)
+                {
+                    var webView = tab.Controls.OfType<Microsoft.Web.WebView2.WinForms.WebView2>().FirstOrDefault();
+                    webView?.Dispose();
+                }
+
+                if (ownsQuorum)
+                {
+                    TryShutdownQuorum();
+                }
+            }
+
+            private void TryShutdownQuorum()
+            {
+                if (quorum == null) return;
+
+                string[] candidateMethods = { "StopCommunication", "Shutdown", "Stop", "Close", "Dispose" };
+                foreach (var methodName in candidateMethods)
+                {
+                    MethodInfo method = quorum.GetType().GetMethod(methodName, BindingFlags.Public | BindingFlags.Instance);
+                    if (method != null && method.GetParameters().Length == 0)
+                    {
+                        try
+                        {
+                            method.Invoke(quorum, null);
+                        }
+                        catch { }
+                    }
+                }
             }
         }
 

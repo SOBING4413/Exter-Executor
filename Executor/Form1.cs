@@ -14,6 +14,7 @@ using DiscordRPC.Logging;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using QuorumAPI;
+using System.Reflection;
 
 namespace executor
 {
@@ -23,6 +24,7 @@ namespace executor
         private AppSettings _settings;
         public Guna2Panel overlayPanel;
         private Form _currentForm;
+        private bool _closing;
         Timestamps timestamps;
         const string InfoUrl = "https://pastebin.com/raw/3cdzkmFZ";
 
@@ -114,7 +116,8 @@ namespace executor
 
         void Deinitialize()
         {
-            client.Dispose();
+            client?.Dispose();
+            TryShutdownQuorum();
         }
         protected override CreateParams CreateParams // Reduce Resize flicker
         {
@@ -130,7 +133,7 @@ namespace executor
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            Executor exe = new Executor(_settings);
+            Executor exe = new Executor(_settings, quorum);
             exe.TopLevel = false;
             exe.Dock = DockStyle.Fill;
             InnerFormBackground.Controls.Add(exe);
@@ -251,7 +254,7 @@ namespace executor
 
             if (SharedData.dontsave == false)
             {
-                Executor executor = new Executor(_settings);
+                Executor executor = new Executor(_settings, quorum);
 
                 LoadForm(executor);
 
@@ -521,6 +524,10 @@ namespace executor
 
         private void OnFormClose(object sender, FormClosingEventArgs e)
         {
+            if (_closing) return;
+            _closing = true;
+
+            DisposeCurrentForm();
             timer2.Stop();
             timer2.Dispose();
             refreshtimer.Stop();
@@ -564,6 +571,7 @@ namespace executor
 
         private void timer2_Tick(object sender, EventArgs e) // Updates Discord RPC
         {
+            if (client == null) return;
             client.SetPresence(new RichPresence()
             {
                 Details = "Exploiting with Exter Executor",
@@ -575,6 +583,25 @@ namespace executor
                     LargeImageText = "Exter Framework",
                 }
             });
+        }
+
+        private void TryShutdownQuorum()
+        {
+            if (quorum == null) return;
+
+            string[] candidateMethods = { "StopCommunication", "Shutdown", "Stop", "Close", "Dispose" };
+            foreach (var methodName in candidateMethods)
+            {
+                MethodInfo method = quorum.GetType().GetMethod(methodName, BindingFlags.Public | BindingFlags.Instance);
+                if (method != null && method.GetParameters().Length == 0)
+                {
+                    try
+                    {
+                        method.Invoke(quorum, null);
+                    }
+                    catch { }
+                }
+            }
         }
     }
 
