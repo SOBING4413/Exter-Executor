@@ -618,15 +618,6 @@
                 CleanupExecutorResources();
             }
 
-            protected override void Dispose(bool disposing)
-            {
-                if (disposing)
-                {
-                    CleanupExecutorResources();
-                }
-                base.Dispose(disposing);
-            }
-
             private void CleanupExecutorResources()
             {
                 if (_resourcesCleaned) return;
