@@ -8,11 +8,18 @@ internal sealed class SettingsView : UserControl
     private readonly AppSettingsProvider _settingsProvider;
     private readonly ApiEndpointService _apiEndpointService;
     private readonly NotificationService _notificationService;
+
+    // General settings
     private readonly TextBox _username;
     private readonly ComboBox _theme;
     private readonly CheckBox _wordWrap;
     private readonly NumericUpDown _fontSize;
     private readonly CheckBox _autoReconnect;
+    private readonly CheckBox _topMost;
+    private readonly CheckBox _minimap;
+    private readonly CheckBox _disableCloseText;
+
+    // API settings
     private readonly ListBox _apiList;
     private readonly TextBox _apiName;
     private readonly TextBox _apiUrl;
@@ -32,21 +39,33 @@ internal sealed class SettingsView : UserControl
         root.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
         root.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
 
+        // General Section
         var general = CreateSection("General");
+
         _username = CreateTextBox(settingsProvider.Settings.Username);
         _theme = new ComboBox { DropDownStyle = ComboBoxStyle.DropDownList, Width = 180 };
-        _theme.Items.AddRange(["Dark", "Light"]);
+        _theme.Items.AddRange(new[] { "Dark", "Light" });
         _theme.SelectedItem = settingsProvider.Settings.Theme;
+
         _wordWrap = new CheckBox { Text = "Word Wrap", ForeColor = Color.White, Checked = settingsProvider.Settings.Editor.WordWrap };
         _fontSize = new NumericUpDown { Minimum = 8, Maximum = 24, Value = settingsProvider.Settings.Editor.FontSize };
         _autoReconnect = new CheckBox { Text = "Discord Auto Reconnect", ForeColor = Color.White, Checked = settingsProvider.Settings.AutoReconnectDiscord };
+
+        // Legacy toggles
+        _topMost = new CheckBox { Text = "Top Most", ForeColor = Color.White, Checked = settingsProvider.Settings.TopMost };
+        _minimap = new CheckBox { Text = "Toggle Minimap Scrollbar", ForeColor = Color.White, Checked = settingsProvider.Settings.ToggleMinimapScrollbar };
+        _disableCloseText = new CheckBox { Text = "Disable Close Tab Text", ForeColor = Color.White, Checked = settingsProvider.Settings.DisableCloseTabText };
 
         AddRow(general, "Username", _username);
         AddRow(general, "Theme", _theme);
         AddRow(general, "Font Size", _fontSize);
         general.Controls.Add(_wordWrap);
         general.Controls.Add(_autoReconnect);
+        general.Controls.Add(_topMost);
+        general.Controls.Add(_minimap);
+        general.Controls.Add(_disableCloseText);
 
+        // API Section
         var apiSection = CreateSection("API Endpoints");
         _apiList = new ListBox { Width = 260, Height = 150, BackColor = Color.FromArgb(31, 41, 55), ForeColor = Color.White, BorderStyle = BorderStyle.None };
         _apiName = CreateTextBox(string.Empty);
@@ -80,6 +99,12 @@ internal sealed class SettingsView : UserControl
         _settingsProvider.Settings.Editor.FontSize = (int)_fontSize.Value;
         _settingsProvider.Settings.Editor.WordWrap = _wordWrap.Checked;
         _settingsProvider.Settings.AutoReconnectDiscord = _autoReconnect.Checked;
+
+        // Legacy toggles
+        _settingsProvider.Settings.TopMost = _topMost.Checked;
+        _settingsProvider.Settings.ToggleMinimapScrollbar = _minimap.Checked;
+        _settingsProvider.Settings.DisableCloseTabText = _disableCloseText.Checked;
+
         _settingsProvider.Save();
         _notificationService.Show("Settings saved.");
         SettingsUpdated?.Invoke();
@@ -118,10 +143,7 @@ internal sealed class SettingsView : UserControl
 
     private void SelectApi()
     {
-        if (_apiList.SelectedItem is not ApiEndpointSettings endpoint)
-        {
-            return;
-        }
+        if (_apiList.SelectedItem is not ApiEndpointSettings endpoint) return;
 
         _apiEndpointService.Select(endpoint.Id);
         RefreshApiList();

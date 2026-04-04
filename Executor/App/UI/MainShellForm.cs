@@ -33,6 +33,7 @@ internal sealed class MainShellForm : Form
         Font = new Font("Segoe UI", 9.5F);
         BackColor = ColorPalette.AppBackground;
         ForeColor = ColorPalette.Foreground;
+        TopMost = settingsProvider.Settings.TopMost;
 
         _contentPanel = new Panel { Dock = DockStyle.Fill, BackColor = ColorPalette.AppBackground };
         _notificationLabel = BuildNotificationHost();
@@ -52,8 +53,10 @@ internal sealed class MainShellForm : Form
             ["Settings"] = settingsView
         };
 
+        // Merge fix: update TopMost + header + editor refresh
         settingsView.SettingsUpdated += () =>
         {
+            TopMost = settingsProvider.Settings.TopMost;
             UpdateHeader(settingsProvider.Settings, appStateService.Status, apiEndpointService.GetSelected().Name);
             editorView.RefreshApiList();
         };
@@ -91,14 +94,30 @@ internal sealed class MainShellForm : Form
         sidebar.Controls.Add(CreateNavigationButton("Scripts", () => NavigateTo("Scripts", null)));
         sidebar.Controls.Add(CreateNavigationButton("Editor", () => NavigateTo("Editor", null)));
         sidebar.Controls.Add(CreateNavigationButton("Dashboard", () => NavigateTo("Dashboard", null)));
-        sidebar.Controls.Add(new Label { Text = "EXTER EXECUTOR", Dock = DockStyle.Top, Height = 50, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.White, TextAlign = ContentAlignment.MiddleCenter });
+        sidebar.Controls.Add(new Label
+        {
+            Text = "EXTER EXECUTOR",
+            Dock = DockStyle.Top,
+            Height = 50,
+            Font = new Font("Segoe UI", 10, FontStyle.Bold),
+            ForeColor = Color.White,
+            TextAlign = ContentAlignment.MiddleCenter
+        });
         return sidebar;
     }
 
     private Panel BuildTopBar(AppSettings settings)
     {
         var panel = new Panel { Height = 56, Dock = DockStyle.Top, BackColor = ColorPalette.Surface, Padding = new Padding(16, 0, 16, 0) };
-        var left = new Label { Text = $"{settings.AppTitle} v{Application.ProductVersion}", Dock = DockStyle.Left, Width = 270, ForeColor = Color.White, TextAlign = ContentAlignment.MiddleLeft, Font = new Font("Segoe UI", 10, FontStyle.Bold) };
+        var left = new Label
+        {
+            Text = $"{settings.AppTitle} v{Application.ProductVersion}",
+            Dock = DockStyle.Left,
+            Width = 270,
+            ForeColor = Color.White,
+            TextAlign = ContentAlignment.MiddleLeft,
+            Font = new Font("Segoe UI", 10, FontStyle.Bold)
+        };
         _userLabel.Dock = DockStyle.Left;
         _apiLabel.Dock = DockStyle.Left;
         _statusLabel.Dock = DockStyle.Right;
@@ -109,11 +128,29 @@ internal sealed class MainShellForm : Form
         return panel;
     }
 
-    private Label BuildNotificationHost() => new() { Dock = DockStyle.Bottom, Height = 32, Visible = false, TextAlign = ContentAlignment.MiddleCenter, BackColor = Color.FromArgb(30, 64, 175), ForeColor = Color.White, Font = new Font("Segoe UI", 9, FontStyle.Bold) };
+    private Label BuildNotificationHost() => new()
+    {
+        Dock = DockStyle.Bottom,
+        Height = 32,
+        Visible = false,
+        TextAlign = ContentAlignment.MiddleCenter,
+        BackColor = Color.FromArgb(30, 64, 175),
+        ForeColor = Color.White,
+        Font = new Font("Segoe UI", 9, FontStyle.Bold)
+    };
 
     private Button CreateNavigationButton(string text, Action onClick)
     {
-        var button = new Button { Text = text, Dock = DockStyle.Top, Height = 44, FlatStyle = FlatStyle.Flat, BackColor = ColorPalette.Sidebar, ForeColor = Color.White, Margin = new Padding(0, 8, 0, 0) };
+        var button = new Button
+        {
+            Text = text,
+            Dock = DockStyle.Top,
+            Height = 44,
+            FlatStyle = FlatStyle.Flat,
+            BackColor = ColorPalette.Sidebar,
+            ForeColor = Color.White,
+            Margin = new Padding(0, 8, 0, 0)
+        };
         button.FlatAppearance.BorderSize = 0;
         button.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, 41, 59);
         button.Click += (_, _) => onClick();
@@ -129,10 +166,7 @@ internal sealed class MainShellForm : Form
 
     private void NavigateTo(string key, IAppLogger? logger)
     {
-        if (!_views.TryGetValue(key, out var view))
-        {
-            return;
-        }
+        if (!_views.TryGetValue(key, out var view)) return;
 
         _contentPanel.Controls.Clear();
         _contentPanel.Controls.Add(view);
