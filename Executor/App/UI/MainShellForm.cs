@@ -52,11 +52,7 @@ internal sealed class MainShellForm : Form
             logger.Info($"Notification displayed: {message}");
         };
 
- codex/refactor-and-modernize-exter-executor-repository-1axwo0
         _notificationTimer = new System.Windows.Forms.Timer { Interval = 2200 };
-=======
-        _notificationTimer = new Timer { Interval = 2200 };
- main
         _notificationTimer.Tick += (_, _) =>
         {
             _notificationLabel.Visible = false;
