@@ -2,10 +2,10 @@ using ExterExecutor.App.Boot;
 
 namespace ExterExecutor.App;
 
-internal static class Program
+public static class Program
 {
     [STAThread]
-    private static void Main()
+    public static void Main()
     {
         ApplicationConfiguration.Initialize();
         using var bootstrapper = new ApplicationBootstrapper();
