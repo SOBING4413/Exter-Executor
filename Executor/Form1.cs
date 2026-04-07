@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -27,6 +26,10 @@ namespace executor
         private bool _closing;
         Timestamps timestamps;
         const string InfoUrl = "https://pastebin.com/raw/3cdzkmFZ";
+        private static readonly HttpClient HttpClient = new HttpClient
+        {
+            Timeout = TimeSpan.FromSeconds(10)
+        };
 
 
         string directoryPath = Path.Combine(Environment.CurrentDirectory, "workspace", "scripts");
@@ -55,6 +58,7 @@ namespace executor
         {
 
             // Refreshes List every 2 seconds
+            EnsureScriptsDirectory();
             refreshtimer.Elapsed += TimerElapsed;
             refreshtimer.Start();
 
@@ -145,7 +149,7 @@ namespace executor
         }
 
 
-        private void LoadInForm(string formload)
+        private async void LoadInForm(string formload)
         {
             if (_currentForm != null)
             {
@@ -160,7 +164,7 @@ namespace executor
             }
 
             //Dispose the old form.
-            DisposeCurrentForm();
+            await DisposeCurrentFormAsync();
 
             // Load the requested form.
             switch (formload)
@@ -185,7 +189,7 @@ namespace executor
         }
 
         // Helper methods to encapsulate loading each form type.
-        private async void DisposeCurrentForm()
+        private async Task DisposeCurrentFormAsync()
         {
             // If theres no forms, return
             if (_currentForm == null) return;
@@ -313,7 +317,21 @@ namespace executor
         private async void CheckVersion()
         {
             string info = await HttpGet(InfoUrl);
-            var infoJson = JObject.Parse(info);
+            if (string.IsNullOrWhiteSpace(info))
+            {
+                return;
+            }
+
+            JObject infoJson;
+            try
+            {
+                infoJson = JObject.Parse(info);
+            }
+            catch
+            {
+                return;
+            }
+
             string localVersion = "1.2.1"; // Local Version
 
             if (localVersion != infoJson["SoftwareVersion"]?.ToString())
@@ -323,16 +341,13 @@ namespace executor
         }
         static async Task<string> HttpGet(string url)
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                try
-                {
-                    return await client.GetStringAsync(url);
-                }
-                catch
-                {
-                    return string.Empty;
-                }
+                return await HttpClient.GetStringAsync(url);
+            }
+            catch
+            {
+                return string.Empty;
             }
         }
 
@@ -423,12 +438,22 @@ namespace executor
 
         public static void PopulateListBox(ListBox lsb, string folder, string searchText = "", params string[] filetypes)
         {
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+                if (lsb.Items.Count > 0)
+                {
+                    lsb.Items.Clear();
+                }
+                return;
+            }
+
             DirectoryInfo dinfo = new DirectoryInfo(folder);
             FileInfo[] files = filetypes.SelectMany(ft => dinfo.GetFiles($"*.{ft}")).ToArray();
 
             if (!string.IsNullOrEmpty(searchText))
             {
-                files = files.Where(f => f.Name.ToLower().Contains(searchText.ToLower())).ToArray();
+                files = files.Where(f => f.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0).ToArray();
             }
 
             var newFileNames = files.Select(file => file.Name).ToArray();
@@ -445,7 +470,12 @@ namespace executor
         {
             if (listBox1.SelectedItem != null)
             {
-                string selectedItem = File.ReadAllText(Path.Combine(directoryPath, listBox1.SelectedItem.ToString()));
+                string selectedFile = Path.Combine(directoryPath, listBox1.SelectedItem.ToString());
+                if (!File.Exists(selectedFile))
+                {
+                    return;
+                }
+                string selectedItem = File.ReadAllText(selectedFile);
 
                 foreach (Form form in Application.OpenForms)
                 {
@@ -483,6 +513,11 @@ namespace executor
                     try
                     {
                         string fileContent = File.ReadAllText(filePath);
+                        if (fileContent.Length > 5_000_000)
+                        {
+                            MessageBox.Show("The selected file is too large to load.");
+                            return;
+                        }
                         string jsonContent = JsonConvert.SerializeObject(fileContent);
                         foreach (Form form in Application.OpenForms)
                         {
@@ -522,12 +557,12 @@ namespace executor
             overlayPanel.Visible = false;
         }
 
-        private void OnFormClose(object sender, FormClosingEventArgs e)
+        private async void OnFormClose(object sender, FormClosingEventArgs e)
         {
             if (_closing) return;
             _closing = true;
 
-            DisposeCurrentForm();
+            await DisposeCurrentFormAsync();
             timer2.Stop();
             timer2.Dispose();
             refreshtimer.Stop();
@@ -535,6 +570,14 @@ namespace executor
             Deinitialize();
             overlayPanel.Dispose();
 
+        }
+
+        private void EnsureScriptsDirectory()
+        {
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
         }
 
 
