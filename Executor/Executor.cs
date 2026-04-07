@@ -340,7 +340,14 @@
                 if (_isExecuting) return;
                 _isExecuting = true;
                 Execute.Enabled = false;
-                Microsoft.Web.WebView2.WinForms.WebView2 webView = (Microsoft.Web.WebView2.WinForms.WebView2)guna2TabControl1.SelectedTab.Controls[0];
+                var selectedTab = guna2TabControl1.SelectedTab;
+                var webView = selectedTab?.Controls.OfType<Microsoft.Web.WebView2.WinForms.WebView2>().FirstOrDefault();
+                if (webView == null)
+                {
+                    _isExecuting = false;
+                    Execute.Enabled = true;
+                    return;
+                }
                 await webView.EnsureCoreWebView2Async();
                 var result = await webView.CoreWebView2.ExecuteScriptAsync("GetText();");
                 var text = JsonConvert.DeserializeObject<string>(result);
@@ -392,6 +399,12 @@
                     }
                     string json = File.ReadAllText(FilePath);
                     List<TabInfo> tabInfos = JsonConvert.DeserializeObject<List<TabInfo>>(json);
+                    if (tabInfos == null || tabInfos.Count == 0)
+                    {
+                        Add_Tab_Click(null, EventArgs.Empty);
+                        tabsloaded = true;
+                        return;
+                    }
 
                         foreach (var tabInfo in tabInfos)
                         {
@@ -479,9 +492,14 @@
                 }
                 string filePath = System.IO.Path.Combine(folderPath, "tabs.json");
 
-                await tabSaver.SaveTabsAsync(filePath);
-
-                isSavingTabs = false;  // Reset the flag once saving is complete
+                try
+                {
+                    await tabSaver.SaveTabsAsync(filePath);
+                }
+                finally
+                {
+                    isSavingTabs = false;  // Reset the flag once saving is complete
+                }
             }
         }
 
@@ -489,6 +507,7 @@
         {
             Microsoft.Web.WebView2.WinForms.WebView2 webView = (Microsoft.Web.WebView2.WinForms.WebView2)guna2TabControl1.SelectedTab.Controls[0];
             string jsonContent = JsonConvert.SerializeObject(text);
+            await webView.EnsureCoreWebView2Async();
             await webView.CoreWebView2.ExecuteScriptAsync($"editor.setValue({jsonContent});");
 
             // Remove the call to SaveTabs() from here or make sure it doesn't trigger too often.
@@ -509,7 +528,8 @@
                     string jsonContent = JsonConvert.SerializeObject(fileContent);
 
                     Microsoft.Web.WebView2.WinForms.WebView2 webView = (Microsoft.Web.WebView2.WinForms.WebView2)guna2TabControl1.SelectedTab.Controls[0];
-                    await webView.CoreWebView2.ExecuteScriptAsync($"editor.setValue({JsonConvert.SerializeObject(fileContent)}); editor.setValue({jsonContent});");
+                    await webView.EnsureCoreWebView2Async();
+                    await webView.CoreWebView2.ExecuteScriptAsync($"editor.setValue({jsonContent});");
                     SaveTabs();
                 }
             }
