@@ -18,6 +18,7 @@ internal sealed class MainShellForm : Form
     private readonly Label _apiLabel;
     private readonly System.Windows.Forms.Timer _notificationTimer;
     private readonly Dictionary<string, Control> _views;
+    private string? _activeViewKey;
 
     public MainShellForm(
         AppSettingsProvider settingsProvider,
@@ -34,6 +35,7 @@ internal sealed class MainShellForm : Form
         BackColor = ColorPalette.AppBackground;
         ForeColor = ColorPalette.Foreground;
         TopMost = settingsProvider.Settings.TopMost;
+        SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
 
         _contentPanel = new Panel { Dock = DockStyle.Fill, BackColor = ColorPalette.AppBackground };
         _notificationLabel = BuildNotificationHost();
@@ -61,10 +63,12 @@ internal sealed class MainShellForm : Form
             editorView.RefreshApiList();
         };
 
+        SuspendLayout();
         Controls.Add(_contentPanel);
         Controls.Add(_notificationLabel);
         Controls.Add(BuildTopBar(settingsProvider.Settings));
         Controls.Add(BuildSidebar());
+        ResumeLayout(true);
 
         NavigateTo("Dashboard", logger);
         UpdateHeader(settingsProvider.Settings, appStateService.Status, apiEndpointService.GetSelected().Name);
@@ -166,10 +170,29 @@ internal sealed class MainShellForm : Form
 
     private void NavigateTo(string key, IAppLogger? logger)
     {
+        if (string.Equals(_activeViewKey, key, StringComparison.Ordinal))
+        {
+            return;
+        }
+
         if (!_views.TryGetValue(key, out var view)) return;
 
-        _contentPanel.Controls.Clear();
-        _contentPanel.Controls.Add(view);
+        _contentPanel.SuspendLayout();
+
+        foreach (Control control in _contentPanel.Controls)
+        {
+            control.Visible = false;
+        }
+
+        if (!_contentPanel.Controls.Contains(view))
+        {
+            _contentPanel.Controls.Add(view);
+        }
+
+        view.Dock = DockStyle.Fill;
+        view.Visible = true;
+        _contentPanel.ResumeLayout(true);
+        _activeViewKey = key;
         logger?.Info($"Navigated to {key}.");
     }
 }

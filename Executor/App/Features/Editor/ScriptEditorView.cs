@@ -14,6 +14,7 @@ internal sealed class ScriptEditorView : UserControl
     private readonly ApiEndpointService _apiEndpointService;
     private readonly InjectionService _injectionService;
     private readonly NotificationService _notificationService;
+    private bool _isBindingApis;
 
     public ScriptEditorView(
         AppSettings settings,
@@ -27,6 +28,7 @@ internal sealed class ScriptEditorView : UserControl
 
         Dock = DockStyle.Fill;
         BackColor = Color.FromArgb(17, 24, 39);
+        DoubleBuffered = true;
 
         // ===== Toolbar =====
         var toolbar = new FlowLayoutPanel
@@ -49,6 +51,11 @@ internal sealed class ScriptEditorView : UserControl
 
         _apiComboBox.SelectedValueChanged += (_, _) =>
         {
+            if (_isBindingApis)
+            {
+                return;
+            }
+
             if (_apiComboBox.SelectedValue is string apiId)
             {
                 _apiEndpointService.Select(apiId);
@@ -91,14 +98,26 @@ internal sealed class ScriptEditorView : UserControl
     private void BindApis()
     {
         var endpoints = _apiEndpointService.GetAll().ToList();
+        _isBindingApis = true;
 
-        _apiComboBox.DataSource = endpoints;
-        _apiComboBox.DisplayMember = nameof(ApiEndpointSettings.Name);
-        _apiComboBox.ValueMember = nameof(ApiEndpointSettings.Id);
+        try
+        {
+            _apiComboBox.BeginUpdate();
+            _apiComboBox.DataSource = endpoints;
+            _apiComboBox.DisplayMember = nameof(ApiEndpointSettings.Name);
+            _apiComboBox.ValueMember = nameof(ApiEndpointSettings.Id);
 
-        var selected = _apiEndpointService.GetSelected();
-        if (selected != null)
-            _apiComboBox.SelectedValue = selected.Id;
+            var selected = _apiEndpointService.GetSelected();
+            if (selected != null)
+            {
+                _apiComboBox.SelectedValue = selected.Id;
+            }
+        }
+        finally
+        {
+            _apiComboBox.EndUpdate();
+            _isBindingApis = false;
+        }
     }
 
     private async void InjectAsync()
