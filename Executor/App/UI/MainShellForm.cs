@@ -18,6 +18,11 @@ internal sealed class MainShellForm : Form
     private readonly Label _apiLabel;
     private readonly System.Windows.Forms.Timer _notificationTimer;
     private readonly Dictionary<string, Control> _views;
+    private readonly Action _settingsUpdatedHandler;
+    private readonly Action<string> _notificationRaisedHandler;
+    private readonly Action<RuntimeStatus> _statusChangedHandler;
+    private readonly SettingsView _settingsView;
+    private readonly ScriptEditorView _editorView;
     private string? _activeViewKey;
 
     public MainShellForm(
@@ -44,24 +49,25 @@ internal sealed class MainShellForm : Form
         _userLabel = new Label { Width = 240, ForeColor = Color.White, TextAlign = ContentAlignment.MiddleLeft };
         _apiLabel = new Label { Width = 220, ForeColor = Color.White, TextAlign = ContentAlignment.MiddleLeft };
 
-        var settingsView = new SettingsView(settingsProvider, apiEndpointService, notificationService);
-        var editorView = new ScriptEditorView(settingsProvider.Settings, apiEndpointService, injectionService, notificationService);
+        _settingsView = new SettingsView(settingsProvider, apiEndpointService, notificationService);
+        _editorView = new ScriptEditorView(settingsProvider.Settings, apiEndpointService, injectionService, notificationService);
 
         _views = new Dictionary<string, Control>
         {
             ["Dashboard"] = new DashboardView(settingsProvider.Settings, appStateService),
-            ["Editor"] = editorView,
+            ["Editor"] = _editorView,
             ["Scripts"] = new ScriptLibraryView(notificationService),
-            ["Settings"] = settingsView
+            ["Settings"] = _settingsView
         };
 
         // Merge fix: update TopMost + header + editor refresh
-        settingsView.SettingsUpdated += () =>
+        _settingsUpdatedHandler = () =>
         {
             TopMost = settingsProvider.Settings.TopMost;
             UpdateHeader(settingsProvider.Settings, appStateService.Status, apiEndpointService.GetSelected().Name);
-            editorView.RefreshApiList();
+            _editorView.RefreshApiList();
         };
+        _settingsView.SettingsUpdated += _settingsUpdatedHandler;
 
         SuspendLayout();
         Controls.Add(_contentPanel);
@@ -73,7 +79,7 @@ internal sealed class MainShellForm : Form
         NavigateTo("Dashboard", logger);
         UpdateHeader(settingsProvider.Settings, appStateService.Status, apiEndpointService.GetSelected().Name);
 
-        notificationService.NotificationRaised += message =>
+        _notificationRaisedHandler = message =>
         {
             _notificationLabel.Text = message;
             _notificationLabel.Visible = true;
@@ -81,6 +87,7 @@ internal sealed class MainShellForm : Form
             _notificationTimer.Start();
             logger.Info($"Notification displayed: {message}");
         };
+        notificationService.NotificationRaised += _notificationRaisedHandler;
 
         _notificationTimer.Tick += (_, _) =>
         {
@@ -88,7 +95,16 @@ internal sealed class MainShellForm : Form
             _notificationTimer.Stop();
         };
 
-        appStateService.StatusChanged += status => UpdateHeader(settingsProvider.Settings, status, apiEndpointService.GetSelected().Name);
+        _statusChangedHandler = status => UpdateHeader(settingsProvider.Settings, status, apiEndpointService.GetSelected().Name);
+        appStateService.StatusChanged += _statusChangedHandler;
+
+        FormClosed += (_, _) =>
+        {
+            _settingsView.SettingsUpdated -= _settingsUpdatedHandler;
+            notificationService.NotificationRaised -= _notificationRaisedHandler;
+            appStateService.StatusChanged -= _statusChangedHandler;
+            _notificationTimer.Stop();
+        };
     }
 
     private Panel BuildSidebar()
