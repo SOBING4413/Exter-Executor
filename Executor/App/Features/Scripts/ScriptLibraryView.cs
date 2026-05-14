@@ -8,13 +8,16 @@ internal sealed class ScriptLibraryView : UserControl
     {
         Dock = DockStyle.Fill;
         BackColor = Color.FromArgb(17, 24, 39);
+        DoubleBuffered = true;
 
         var container = new SplitContainer
         {
             Dock = DockStyle.Fill,
             BackColor = BackColor,
             SplitterDistance = 320,
-            IsSplitterFixed = false
+            IsSplitterFixed = false,
+            Panel1MinSize = 220,
+            Panel2MinSize = 260
         };
 
         var list = new ListBox

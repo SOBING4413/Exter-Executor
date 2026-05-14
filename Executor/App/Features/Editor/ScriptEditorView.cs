@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using ExterExecutor.App.Core.Configuration;
 using ExterExecutor.App.Core.Services;
 
@@ -14,6 +13,10 @@ internal sealed class ScriptEditorView : UserControl
     private readonly ApiEndpointService _apiEndpointService;
     private readonly InjectionService _injectionService;
     private readonly NotificationService _notificationService;
+    private readonly EventHandler _apiSelectionChangedHandler;
+    private CancellationTokenSource? _injectCts;
+    private bool _isInjecting;
+    private bool _isBindingApis;
 
     public ScriptEditorView(
         AppSettings settings,
@@ -27,6 +30,7 @@ internal sealed class ScriptEditorView : UserControl
 
         Dock = DockStyle.Fill;
         BackColor = Color.FromArgb(17, 24, 39);
+        DoubleBuffered = true;
 
         // ===== Toolbar =====
         var toolbar = new FlowLayoutPanel
@@ -47,14 +51,20 @@ internal sealed class ScriptEditorView : UserControl
             Font = new Font("Segoe UI", 9.5F)
         };
 
-        _apiComboBox.SelectedValueChanged += (_, _) =>
+        _apiSelectionChangedHandler = (_, _) =>
         {
+            if (_isBindingApis)
+            {
+                return;
+            }
+
             if (_apiComboBox.SelectedValue is string apiId)
             {
                 _apiEndpointService.Select(apiId);
                 _notificationService.Show("API switched successfully.");
             }
         };
+        _apiComboBox.SelectedValueChanged += _apiSelectionChangedHandler;
 
         _progressBar = new ProgressBar
         {
@@ -91,25 +101,49 @@ internal sealed class ScriptEditorView : UserControl
     private void BindApis()
     {
         var endpoints = _apiEndpointService.GetAll().ToList();
+        _isBindingApis = true;
 
-        _apiComboBox.DataSource = endpoints;
-        _apiComboBox.DisplayMember = nameof(ApiEndpointSettings.Name);
-        _apiComboBox.ValueMember = nameof(ApiEndpointSettings.Id);
+        try
+        {
+            _apiComboBox.BeginUpdate();
+            _apiComboBox.DataSource = endpoints;
+            _apiComboBox.DisplayMember = nameof(ApiEndpointSettings.Name);
+            _apiComboBox.ValueMember = nameof(ApiEndpointSettings.Id);
 
-        var selected = _apiEndpointService.GetSelected();
-        if (selected != null)
-            _apiComboBox.SelectedValue = selected.Id;
+            var selected = _apiEndpointService.GetSelected();
+            if (selected != null)
+            {
+                _apiComboBox.SelectedValue = selected.Id;
+            }
+        }
+        finally
+        {
+            _apiComboBox.EndUpdate();
+            _isBindingApis = false;
+        }
     }
 
     private async void InjectAsync()
     {
+        if (_isInjecting)
+        {
+            return;
+        }
+
+        _isInjecting = true;
+        _injectCts?.Dispose();
+        _injectCts = new CancellationTokenSource();
         _injectButton.Enabled = false;
         _progressBar.Visible = true;
 
         try
         {
-            var result = await _injectionService.InjectAsync(_editor.Text, CancellationToken.None);
+            var result = await _injectionService.InjectAsync(_editor.Text, _injectCts.Token);
             _notificationService.Show(result.Message);
+        }
+        catch (OperationCanceledException)
+        {
+            _notificationService.Show("Inject canceled.");
         }
         catch (Exception ex)
         {
@@ -119,7 +153,21 @@ internal sealed class ScriptEditorView : UserControl
         {
             _progressBar.Visible = false;
             _injectButton.Enabled = true;
+            _isInjecting = false;
         }
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing)
+        {
+            _apiComboBox.SelectedValueChanged -= _apiSelectionChangedHandler;
+            _injectCts?.Cancel();
+            _injectCts?.Dispose();
+            _injectCts = null;
+        }
+
+        base.Dispose(disposing);
     }
 
     private static Button CreateButton(string text, Action onClick)
